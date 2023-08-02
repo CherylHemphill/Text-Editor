@@ -1,4 +1,4 @@
-const { offlineFallback, warmStrategyCache } = require('workbox-recipes');
+const { warmStrategyCache } = require('workbox-recipes');
 const { CacheFirst } = require('workbox-strategies');
 const { registerRoute } = require('workbox-routing');
 const { CacheableResponsePlugin } = require('workbox-cacheable-response');
@@ -6,19 +6,6 @@ const { ExpirationPlugin } = require('workbox-expiration');
 const { precacheAndRoute } = require('workbox-precaching/precacheAndRoute');
 
 precacheAndRoute(self.__WB_MANIFEST);
-
-// Define a custom offline fallback handler function
-const offlineFallbackHandler = async ({ event }) => {
-  return new Response('You are offline. Please check your internet connection.', {
-    status: 200,
-    headers: { 'Content-Type': 'text/plain' },
-  });
-};
-
-// The handler function to be used as a fallback when a network request fails
-offlineFallback({
-  handler: offlineFallbackHandler,
-});
 
 const pageCache = new CacheFirst({
   cacheName: 'page-cache',
@@ -54,5 +41,5 @@ registerRoute(
   })
 );
 
-registerRoute();
+registerRouteregisterRoute(({ request }) => request.mode === 'navigate', pageCache);;
 
