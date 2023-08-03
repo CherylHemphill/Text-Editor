@@ -22,8 +22,11 @@ This application features a PWA that is easly to install by clicking on the inst
 https://github.com/CherylHemphill/Text-Editor/assets/126039394/aa575035-f50d-4fa7-9151-e8a2476271bb
 
 
-
-![alt text](assets/images/screenshot.png)
+Browser view:
+![alt text](./client/src/images/screenshot-browser.png)
+<br>
+PWA view:
+![alt text](./client/src/images/screenshot-pwa.png)
 
 ## License
 
