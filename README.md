@@ -14,7 +14,7 @@ Text editor empowers you to craft expressive notes and code snippets seamlessly,
 
 
 ## Installation
-This application features a PWA that is easly to install by clicking on the install button. It can also be accessed through the browser. <br> To access the code you will need to clone the repo and use webpack to build the dist folder after editing any aspects of the code that you would like changed.
+This application features a PWA that is easly to install by clicking on the install button. It can also be accessed through the browser @ https://snippet-editor-c34410eeb2c1.herokuapp.com/ <br> To access the code you will need to clone the repo and use webpack to build the dist folder after editing any aspects of the code that you would like changed.
 
 ## Usage
 
