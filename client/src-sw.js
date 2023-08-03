@@ -26,7 +26,7 @@ warmStrategyCache({
 
 registerRoute(
   // Match all requests for assets (e.g., CSS, JS, images)
-  ({ request }) => request.destination === 'style' || request.destination === 'script' || request.destination === 'image',
+  ({ request }) => ['style','script','image', 'worker'].includes(request.destination),
   // Use a CacheFirst strategy for assets, cache them for 30 days
   new CacheFirst({
     cacheName: 'asset-cache',
