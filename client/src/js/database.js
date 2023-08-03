@@ -27,7 +27,7 @@ export const putDb = async (content) => {
     const store = tx.objectStore('jate');
 
     // Use the .add() method on the store and pass in the content.
-    const request = store.add({ content });
+    const request = store.put({ id: 1, value: content });
 
     // Get confirmation of the request.
     const result = await request;
@@ -39,9 +39,9 @@ export const putDb = async (content) => {
 
 
 // Logic for a method that gets all the content from the database
-export const getDb = async () => {
+export const getAllDb = async () => {
   try {
-    console.log('GET from database');
+    console.log('GET all from database');
 
     // Create a connection to the database and version we want to use.
     const jateDb = await openDB('jate', 1);
@@ -53,15 +53,15 @@ export const getDb = async () => {
     const store = tx.objectStore('jate');
 
     // Use the .getAll() method to get all data in the database.
-    const request = store.getAll();
+    const request = store.get(1);
 
     // Get confirmation of the request.
     const result = await request;
     console.log('result.value', result);
-    return result;
+    return result?.value;
   } catch (err) {
     console.error('Error while getting content from the database:', err);
-    return [];
+    
   }
 };
 
